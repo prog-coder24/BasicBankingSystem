@@ -1,0 +1,25 @@
+body {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-color: #fff;
+  color: #070707;
+  margin-bottom: 150px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+.footer {
+  background-color: #070707;
+  padding: 24px;
+  text-align: center;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
