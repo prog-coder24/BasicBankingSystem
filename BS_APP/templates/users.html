@@ -1,7 +1,6 @@
-{% extends 'index.html' %}{% load static %}
-{% block body %}
+{% extends 'index.html' %}{% load static %} {% block body %}
 <div class="table-responsive container table-hover">
-<table class="table table-bordered">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -9,17 +8,18 @@
         <th scope="col">Email Id</th>
         <th scope="col">Current Balance</th>
         <th scope="col">Action</th>
-        
       </tr>
     </thead>
     <tbody>
-        {% for u in users %}
+      {% for u in users %}
       <tr>
         <th scope="row">{{ forloop.counter }}</th>
         <td>{{ u.full_name }}</td>
         <td>{{ u.email }}</td>
         <td>{{ u.current_balance }}</td>
-        <td><a href="#" class="badge badge-light">View user</a></td>
+        <td>
+          <a href="/transfer/{{ u.id }}" class="badge badge-light">View user</a>
+        </td>
       </tr>
       {% endfor %}
     </tbody>

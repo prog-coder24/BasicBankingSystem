@@ -32,7 +32,7 @@ class Transaction(models.Model):
     sender = models.ForeignKey(to=User, on_delete=models.CASCADE, null=True, related_name='sender_name')
     recipient = models.ForeignKey(to=User, on_delete=models.CASCADE, null=True, related_name='receiver_name')
     amount = models.IntegerField(null=True, blank=True)
-    status = models.BooleanField(default=False)
+    status = models.CharField(max_length=200,null=True, blank=True)
     created_at = models.DateTimeField(default=timezone.now)
 
 

@@ -1,0 +1,28 @@
+{% extends 'index.html' %}{% load static %} {% block body %}
+<div class="table-responsive container table-hover">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Sender</th>
+        <th scope="col">Receiver</th>
+        <th scope="col">Amount Transferred</th>
+        <th scope="col">Time</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for t in transactions %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{ t.sender }}</td>
+        <td>{{ t.recipient }}</td>
+        <td>{{ t.amount }}</td>
+        <td>{{ t.created_at }}</td>
+        <td>{{ t.status }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

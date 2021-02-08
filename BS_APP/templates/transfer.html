@@ -1,0 +1,54 @@
+{% extends 'index.html' %}{% load static %} {% block body %}
+<div class="container">
+  <div class="table-responsive table-hover">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email Id</th>
+          <th scope="col">Current Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ user.full_name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.current_balance }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <form action="/add_transfer/" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="Select1">Select Sender</label>
+      <select class="form-control" id="Select1" name="sender">
+        <option selected>{{user.full_name}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="Select2">Select Receiver</label>
+      <select class="form-control" id="Select2" name="receiver">
+        <option selected>Choose...</option>
+        {% for r in receiver %}
+        <option>{{r.full_name}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="amount">Enter amount</label>
+      <input
+        type="number"
+        class="form-control"
+        id="amount"
+        placeholder="enter amount"
+        name="amount"
+      />
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn button my-2 btn-sm">TRANSFER</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
