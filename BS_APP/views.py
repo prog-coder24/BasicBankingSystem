@@ -5,8 +5,10 @@ from .forms import *
 from django.shortcuts import redirect
 
 # Create your views here.
+
+
 def home(request):
-    return render(request,'index.html')
+    return render(request,'home.html')
 
 def user(request):
 
@@ -40,7 +42,7 @@ def add_transfer(request):
               status = 'Failed'
          
          Transaction.objects.create(sender=sender_instance,recipient=receiver_instance,amount=amount,status=status)
-         curr_balance = curr_balance-amount
+         
          return redirect(history)
 
 

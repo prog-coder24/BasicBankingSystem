@@ -1,0 +1,46 @@
+{% extends 'index.html' %}{% load static %} {% block body %}
+
+<div class="landing_page container" data-aos="zoom-in" data-aos-duration="1000">
+  <div>
+    <div>
+      <h1 style="font-size: 55px; margin-top: 150px">
+        Banking <span style="color: #f7caac">has never</span><br />been so easy
+      </h1>
+    </div>
+    <div>
+      <p>View user, check balances, transfer money and more</p>
+    </div>
+    <button type="button" class="btn btn-dark get-started">Get started</button>
+  </div>
+  <div class="m-auto text-center">
+    <img src="{% static 'img/credit.svg' %}" class="img-fluid card-img" />
+  </div>
+</div>
+
+<div class="pancake">
+  <div class="box">
+    <i
+      class="fas fa-users"
+      style="color: #f7caac; font-size: 170px"
+      data-aos="flip-up"
+      data-aos-duration="1000"
+    ></i>
+  </div>
+  <div class="box">
+    <i
+      class="far fa-credit-card"
+      style="color: #f7caac; font-size: 170px"
+      data-aos="flip-down"
+      data-aos-duration="1000"
+    ></i>
+  </div>
+  <div class="box">
+    <i
+      class="fas fa-exchange-alt"
+      style="color: #f7caac; font-size: 170px"
+      data-aos="flip-up"
+      data-aos-duration="1000"
+    ></i>
+  </div>
+</div>
+{% endblock %}
