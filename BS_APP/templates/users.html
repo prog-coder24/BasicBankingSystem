@@ -18,7 +18,9 @@
         <td>{{ u.email }}</td>
         <td>{{ u.current_balance }}</td>
         <td>
-          <a href="/transfer/{{ u.id }}" class="badge badge-light">View user</a>
+          <a href="/transfer/{{ u.id }}" class="badge btn btn-dark view-user"
+            >View user</a
+          >
         </td>
       </tr>
       {% endfor %}

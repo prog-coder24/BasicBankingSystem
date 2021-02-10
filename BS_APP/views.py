@@ -38,11 +38,12 @@ def add_transfer(request):
         
          if curr_balance > int(amount):
               status = 'Successful'
+              Transaction.objects.create(sender=sender_instance,recipient=receiver_instance,amount=amount,status=status)
+              return redirect(history)
          else:
               status = 'Failed'
-         
-         Transaction.objects.create(sender=sender_instance,recipient=receiver_instance,amount=amount,status=status)
-         
-         return redirect(history)
+              Transaction.objects.create(sender=sender_instance,recipient=receiver_instance,amount=amount,status=status)
+              return render(request,'transfer.html',{"warning": "Transaction failed because of insufficient balance :("})
+              return redirect(transfer)
 
 

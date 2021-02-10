@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
 body {
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -7,7 +7,7 @@ body {
   background-color: #262a2b !important;
   color: #fff !important;
   margin-bottom: 150px;
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "Karla", sans-serif;
 }
 .base {
   background-color: #fff !important;
@@ -31,11 +31,14 @@ body {
   visibility: hidden;
 }
 .container {
-  width: 80% !important;
+  width: 65% !important;
   max-width: 95% !important;
 }
 .collapsed {
   visibility: hidden;
+}
+a {
+  text-decoration: none !important;
 }
 .navbar-toggler:focus,
 .navbar-toggler:active,
@@ -45,7 +48,7 @@ body {
   padding-bottom: 0px;
   width: 150px;
   position: fixed;
-  text-decoration-color: #fff;
+  text-decoration-color: none !important;
   border: none;
 }
 .navbar-brand {
@@ -68,7 +71,9 @@ body {
 .users {
   border-right: 2px solid #fff;
 }
-.get-started {
+
+.get-started,
+.view-user {
   letter-spacing: 1px !important;
   padding: 10px 25px !important;
   border-radius: none !important;
@@ -76,10 +81,10 @@ body {
   font-weight: bold;
 }
 .pancake {
-  padding: 200px;
+  padding: 250px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   font-size: 18px;
 }
 .box {
@@ -88,22 +93,90 @@ body {
   border-radius: 15px;
   background-color: #262a2b;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
+  color: #fff;
+}
+.box:hover {
+  background-color: #f7caac;
+  padding: 10px;
+  opacity: 0.9;
+  border-radius: 0px !important;
+  color: #070707;
 }
 .box i:hover {
   color: #070707 !important;
 }
+.img-wrapper {
+  width: 90% !important;
+}
 .landing_page {
-  margin-top: 70px;
+  margin-top: 80px;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 .card-img {
-  width: 65% !important;
+  width: 90% !important;
 }
+.img-btn {
+  visibility: hidden;
+}
+
 @media screen and (max-width: 768px) {
   .collapsed {
     visibility: visible;
+  }
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .landing_page {
+    display: block;
+    margin-top: 0px;
+  }
+  .landing_page h1 {
+    margin-top: 80px !important;
+    font-size: 30px !important;
+  }
+  .landing_page p {
+    font-size: 3.1vw !important;
+  }
+  .get-started {
+    letter-spacing: 0px !important;
+    padding: 3px 8px !important;
+    border-radius: none !important;
+    text-transform: uppercase !important;
+    font-weight: bold;
+    font-size: 13px !important;
+  }
+  .card-img {
+    margin-top: 15px !important;
+    width: 75% !important;
+  }
+  .pancake {
+    margin-top: 40px !important;
+    padding: 100px !important;
+    display: block;
+    width: 80% !important;
+  }
+  .pancake p {
+    font-size: 15px !important;
+    text-align: none !important;
+    margin-top: 15px !important;
+  }
+  .box {
+    padding: 20px !important;
+    display: grid !important;
+    grid-template-rows: 1fr !important;
+    /* text-align: none !important;
+    flex: 0 1 250px !important; */
+    /* flex-direction: row !important;
+    justify-content: space-around !important;
+    align-items: unset !important; */
+  }
+
+  .img-wrapper {
+    width: 75% !important;
   }
 }

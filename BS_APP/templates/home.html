@@ -8,7 +8,7 @@
       </h1>
     </div>
     <div>
-      <p>View user, check balances, transfer money and more</p>
+      <p>Open a new account, view user, check balances, transfer money<br />and more.</p>
     </div>
     <button type="button" class="btn btn-dark get-started">Get started</button>
   </div>
@@ -18,29 +18,24 @@
 </div>
 
 <div class="pancake">
-  <div class="box">
-    <i
-      class="fas fa-users"
-      style="color: #f7caac; font-size: 170px"
-      data-aos="flip-up"
-      data-aos-duration="1000"
-    ></i>
+  <div class="box" data-aos="slide-right" data-aos-duration="1000">
+    <div class="m-auto text-center">
+      <img src="{% static 'img/user1.svg' %}" class="img-fluid img-wrapper" />
+    </div>
+  <p class="text-center mt-5">Join easily now, find friends in web app and make payments easily and without communication.</p>
   </div>
-  <div class="box">
-    <i
-      class="far fa-credit-card"
-      style="color: #f7caac; font-size: 170px"
-      data-aos="flip-down"
-      data-aos-duration="1000"
-    ></i>
+  <div class="box" data-aos="slide-up" data-aos-duration="1000">
+    <div class="m-auto text-center">
+      <img src="{% static 'img/transaction.svg' %}" class="img-fluid img-wrapper" />
+    </div>
+    <p class="text-center mt-5">Keep track of previous transactions.Check history, transaction time, status and more.</p>
   </div>
-  <div class="box">
-    <i
-      class="fas fa-exchange-alt"
-      style="color: #f7caac; font-size: 170px"
-      data-aos="flip-up"
-      data-aos-duration="1000"
-    ></i>
+  <div class="box" data-aos="slide-left" data-aos-duration="1000">
+    <div class="m-auto text-center">
+      <img src="{% static 'img/pay.svg' %}" class="img-fluid img-wrapper" />
+    </div>
+    <p class="text-center mt-5">Simple transfers, utility bills, functional statement, now in your pocket.</p>
+  </div>
   </div>
 </div>
 {% endblock %}
