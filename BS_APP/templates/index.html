@@ -21,12 +21,13 @@
   <body>
     <div class="container-fluid" style="background-color: #262a2b">
       <nav
-        class="navbar navbar-expand-lg container p-4"
+        class="navbar navbar-expand-lg container"
         data-aos="slide-down"
         data-aos-duration="1000"
       >
         <a class="navbar-brand" href="/"
-          ><i class="fas fa-rupee-sign"></i> My Bank</a
+          ><i class="fas fa-rupee-sign" style="color: #f7caac"></i
+          >edneck&nbsp;<i class="fab fa-btc" style="color: #f7caac"></i>ank</a
         >
         <button
           class="navbar-toggle collapsed"
@@ -37,19 +38,22 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"
+            ><i class="fas fa-bars" style="color: #fff"></i
+          ></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link users" href="/users/"
-                >Users&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a class="nav-link" href="/users/"
+                ><i class="fas fa-users" style="font-size: 17px"></i> Users
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/history/"
-                >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;History</a
+                ><i class="fas fa-history" style="font-size: 17px"></i>
+                History</a
               >
             </li>
           </ul>
@@ -58,7 +62,8 @@
     </div>
     <div>{% block body %}{% endblock %}</div>
     <div class="footer">
-      <p class="m-auto">
+      <p class="m-auto">© Copyright 2021 Redneck Bank, All rights reserved</p>
+      <p class="mt-2">
         Developed with
         <i class="fas fa-heart" style="color: #cc2525"></i> by Vaishnavi Sawant
       </p>

@@ -43,7 +43,8 @@ def add_transfer(request):
          else:
               status = 'Failed'
               Transaction.objects.create(sender=sender_instance,recipient=receiver_instance,amount=amount,status=status)
-              return render(request,'transfer.html',{"warning": "Transaction failed because of insufficient balance :("})
-              return redirect(transfer)
+              receiver = User.objects.all()
+              return render(request,'transfer.html',{"warning": "Transaction failed because of insufficient balance :(", "receiver":receiver})
+           
 
 

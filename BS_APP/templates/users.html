@@ -3,11 +3,11 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th scope="col">#</th>
+        <th scope="col">Index No.</th>
         <th scope="col">Name</th>
         <th scope="col">Email Id</th>
         <th scope="col">Current Balance</th>
-        <th scope="col">Action</th>
+        <th scope="col" class="text-center">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -16,8 +16,8 @@
         <th scope="row">{{ forloop.counter }}</th>
         <td>{{ u.full_name }}</td>
         <td>{{ u.email }}</td>
-        <td>{{ u.current_balance }}</td>
-        <td>
+        <td><i class="fas fa-rupee-sign rupee"></i> {{ u.current_balance }}</td>
+        <td class="text-center">
           <a href="/transfer/{{ u.id }}" class="badge btn btn-dark view-user"
             >View user</a
           >

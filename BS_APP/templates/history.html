@@ -3,9 +3,9 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th scope="col">#</th>
+        <th scope="col">Index No.</th>
         <th scope="col">Sender</th>
-        <th scope="col">Receiver</th>
+        <th scope="col">Recipient</th>
         <th scope="col">Amount Transferred</th>
         <th scope="col">Time</th>
         <th scope="col">Status</th>
@@ -17,9 +17,13 @@
         <th scope="row">{{ forloop.counter }}</th>
         <td>{{ t.sender }}</td>
         <td>{{ t.recipient }}</td>
-        <td>{{ t.amount }}</td>
+        <td><i class="fas fa-rupee-sign rupee"></i> {{ t.amount }}</td>
         <td>{{ t.created_at }}</td>
-        <td>{{ t.status }}</td>
+        {% if t.status == "Successful" %}
+        <td style="color: green">{{ t.status }}</td>
+        {% else %}
+        <td style="color: red">{{ t.status }}</td>
+        {% endif %}
       </tr>
       {% endfor %}
     </tbody>
