@@ -1,69 +1,60 @@
 {% extends 'base.html' %}{% load static %} {% block body %}
 <div class="container mt-5">
-  {% if warning %}
-  <div
-    class="alert alert-danger text-center alert-dismissible fade show"
-    role="alert"
-  >
-    {{ warning }}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    {% if warning %}
+    <div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
+        {{ warning }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
-  </div>
-  {% endif %}
-  <div class="table-responsive table-hover">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Email Id</th>
-          <th scope="col">Current Balance</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{ user.full_name }}</td>
-          <td>{{ user.email }}</td>
-          <td>
-            <i class="fas fa-rupee-sign rupee"></i> {{ user.current_balance }}
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <h3 class="text-center mb-3 mt-4">Proceed Transaction</h3>
-  <form action="/add_transfer/" method="POST">
-    {% csrf_token %}
-    <div class="form-group">
-      <label for="Select1">Sender</label>
-      <select class="form-control" id="Select1" name="sender">
+    </div>
+    {% endif %}
+    <div class="table-responsive table-hover">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email Id</th>
+                    <th scope="col">Current Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ user.full_name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>
+                        <i class="fas fa-rupee-sign rupee"></i> {{ user.current_balance }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3 class="text-center mb-3 mt-4">Proceed Transaction</h3>
+    <form action="/add_transfer/{{user.id}}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="Select1">Sender</label>
+            <select class="form-control" id="Select1" name="sender" required>
         <option selected>{{user.full_name}}</option>
       </select>
-    </div>
-    <div class="form-group">
-      <label for="Select2">Select Recipient</label>
-      <select class="form-control" id="Select2" name="receiver">
-        <option selected>Choose...</option>
+        </div>
+        <div class="form-group">
+            <label for="Select2">Select Recipient</label>
+            <select class="form-control" id="Select2" name="receiver" required>
+        <option selected value="">Choose...</option>
         {% for r in receiver %}
         <option>{{r.full_name}}</option>
         {% endfor %}
       </select>
-    </div>
-    <div class="form-group">
-      <label for="amount">Enter amount</label>
-      <input
-        type="number"
-        class="form-control"
-        id="amount"
-        placeholder="enter amount"
-        name="amount"
-      />
-    </div>
-    <div class="text-center">
-      <button type="submit" class="btn button my-2 btn-sm btn-dark view-user">
+        </div>
+        <div class="form-group">
+            <label for="amount">Enter amount</label>
+            <input type="number" class="form-control" id="amount" placeholder="Enter amount" name="amount" required/>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn button my-2 btn-sm btn-dark view-user">
         TRANSFER
       </button>
-    </div>
-  </form>
+        </div>
+    </form>
 </div>
 {% endblock %}
