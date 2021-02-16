@@ -1,32 +1,135 @@
 {% extends 'base.html' %}{% load static %} {% block body %}
+<div class="table-responsive container table-hover mt-5" data-aos="fade" data-aos-duration="1000">
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Index No.</th>
+                <th scope="col">Sender</th>
+                <th scope="col">Recipient</th>
+                <th scope="col">Amount Transferred</th>
+                <th scope="col">Time</th>
+                <th scope="col">Status</th>{% extends 'base.html' %}{% load static %} {% block body %}
+2
 <div class="table-responsive container table-hover mt-5">
+3
   <table class="table table-bordered">
+4
     <thead>
+5
       <tr>
-        <th scope="col">Index No.</th>
+6
+        <th scope="col">Index No.</th>{% extends 'base.html' %}{% load static %} {% block body %}
+<div class="table-responsive container table-hover mt-5" data-aos="fade" data-aos-duration="1000">
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Index No.</th>
+                <th scope="col">Sender</th>
+                <th scope="col">Recipient</th>
+                <th scope="col">Amount Transferred</th>
+                <th scope="col">Time</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for t in transactions %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ t.sender }}</td>
+                <td>{{ t.recipient }}</td>
+                <td><i class="fas fa-rupee-sign rupee"></i> {{ t.amount }}</td>
+                <td>{{ t.created_at }}</td>
+                {% if t.status == "Successful" %}
+                <td style="color: green">{{ t.status }}</td>
+                {% else %}
+                <td style="color: red">{{ t.status }}</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+</div>
+{% endblock %}
+7
         <th scope="col">Sender</th>
+8
         <th scope="col">Recipient</th>
+9
         <th scope="col">Amount Transferred</th>
+10
         <th scope="col">Time</th>
+11
         <th scope="col">Status</th>
+12
       </tr>
+13
     </thead>
+14
     <tbody>
+15
       {% for t in transactions %}
+16
       <tr>
+17
         <th scope="row">{{ forloop.counter }}</th>
+18
         <td>{{ t.sender }}</td>
+19
         <td>{{ t.recipient }}</td>
+20
         <td><i class="fas fa-rupee-sign rupee"></i> {{ t.amount }}</td>
+21
         <td>{{ t.created_at }}</td>
+22
         {% if t.status == "Successful" %}
+23
         <td style="color: green">{{ t.status }}</td>
+24
         {% else %}
+25
         <td style="color: red">{{ t.status }}</td>
+26
         {% endif %}
+27
       </tr>
+28
       {% endfor %}
+29
     </tbody>
+30
   </table>
+31
+</div>
+32
+{% endblock %}
+33
+
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for t in transactions %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ t.sender }}</td>
+                <td>{{ t.recipient }}</td>
+                <td><i class="fas fa-rupee-sign rupee"></i> {{ t.amount }}</td>
+                <td>{{ t.created_at }}</td>
+                {% if t.status == "Successful" %}
+                <td style="color: green">{{ t.status }}</td>
+                {% else %}
+                <td style="color: red">{{ t.status }}</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
 </div>
 {% endblock %}
