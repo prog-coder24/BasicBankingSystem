@@ -26,7 +26,7 @@ SECRET_KEY = '8j63l1z7uxkus-%w$0e2r*oa2##4*@l8%g2hpsscu0dxb)+8mp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0. 0.1']
+ALLOWED_HOSTS = ['127.0. 0.1','bank-transaction-system.herokuapp.com/']
 
 AUTH_USER_MODEL = 'BS_APP.User'
 
